@@ -17,6 +17,8 @@ console.log(statisticalData);
 function App() {
   return (
     <div className="App">
+      <h1>REACT HOMEWORK 1</h1>
+      <h2>Profile</h2>
       <Profile
         name={name}
         avatar={avatar}
@@ -26,11 +28,13 @@ function App() {
         views={views}
         likes={likes}
       />
-
+      <h2>Statistics</h2>
       <Statistics stats={statisticalData}>
         {stats.title && <Title stats={statisticalData} />}
       </Statistics>
+      <h2>FriendList</h2>
       <FriendList friends={friends} />
+      <h2>TransactionHistory</h2>
       <TransactionHistory item={transactions} />
     </div>
   );
