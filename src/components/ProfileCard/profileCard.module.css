@@ -1,0 +1,36 @@
+.profile {
+  display: block;
+  width: 390px;
+  margin: auto;
+
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(243, 243, 234);
+  border: 1px solid black;
+  box-shadow: rgb(125, 127, 133) 2px 2px 4px 4px;
+}
+.description {
+  text-shadow: 1px 1px 2px rgb(229, 255, 0), 0 0 1em rgb(61, 61, 230),
+    0 0 0.2em rgb(56, 56, 240);
+}
+.stats {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style: none;
+}
+.item {
+  width: 150px;
+  color: white;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: rgb(43, 106, 199);
+  border: darkgray 1px solid;
+}
+.item:first-child {
+  margin-left: 10px;
+}
+.label {
+  margin-right: 5px;
+}

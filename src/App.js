@@ -1,32 +1,37 @@
 import "./App.css";
-import Profile from "./component/Profile/Profile";
-import FriendList from "./component/Friends/FriendList";
-import StatisticList from "./component/Statistic/StatisticList";
-import TransactionHistory from "./component/Transaction/TransactionHistory";
-import profile from "./component/Profile/profile.json";
-import friends from "./component/Friends/friends.json";
-import statistic from "./component/Statistic/statistic.json";
-import transactions from "./component/Transaction/transaction.json";
+import { Profile } from "./components/ProfileCard/ProfileCard";
+import { Statistics } from "./components/Statistics/Statistics";
+import { Title } from "./components/Title/Title";
+import { FriendList } from "./components/FriendList/FriendList";
+import { TransactionHistory } from "./components/Transactions/TransactionHistory";
+import user from "./components/ProfileCard/user.json";
+import statisticalData from "./components/Statistics/statisticalData.json";
+import friends from "./components/FriendList/friends.json";
+import transactions from "./components/Transactions/transactions.json";
+
+const { avatar, name, location, tag, stats } = user;
+const { followers, views, likes } = stats;
+
+console.log(statisticalData);
+
 function App() {
   return (
-    <div>
-      <h1>REACT => HOME WORK 1 </h1>
-      <h2>Profile user</h2>
+    <div className="App">
       <Profile
-        name={profile.name}
-        tag={profile.tag}
-        location={profile.location}
-        avatar={profile.avatar}
-        followers={profile.stats.followers}
-        views={profile.stats.views}
-        likes={profile.stats.likes}
+        name={name}
+        avatar={avatar}
+        location={location}
+        tag={tag}
+        followers={followers}
+        views={views}
+        likes={likes}
       />
-      <h2>Friend list</h2>
-      <FriendList items={friends} />
-      <h2>"Upload stats"</h2>
-      <StatisticList items={statistic} />
-      <h2>Transaction</h2>
-      <TransactionHistory items={transactions} />;
+
+      <Statistics stats={statisticalData}>
+        {stats.title && <Title stats={statisticalData} />}
+      </Statistics>
+      <FriendList friends={friends} />
+      <TransactionHistory item={transactions} />
     </div>
   );
 }
