@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import styles from "./statistics.module.css";
 
 export function Statistics({ stats, children }) {
-  const { title } = stats;
+  // const { title } = stats;
   return (
     <section className={styles.statistics}>
       {children}
