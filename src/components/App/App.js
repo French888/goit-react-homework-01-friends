@@ -10,8 +10,6 @@ import transactions from "../../data/transactions.json";
 
 const { avatar, name, location, tag, stats } = user;
 
-console.log(statisticalData);
-
 function App() {
   return (
     <div className="App">
@@ -28,7 +26,7 @@ function App() {
       <h2>FriendList</h2>
       <FriendList friends={friends} />
       <h2>TransactionHistory</h2>
-      <TransactionHistory item={transactions} />
+      <TransactionHistory items={transactions} />
     </div>
   );
 }

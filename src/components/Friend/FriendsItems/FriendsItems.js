@@ -18,8 +18,12 @@ function FriendsItems({ id, avatar, name, isOnline }) {
 export default FriendsItems;
 
 FriendsItems.propTypes = {
-  name: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  isOnline: PropTypes.bool.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ),
 };
