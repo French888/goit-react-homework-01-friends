@@ -1,12 +1,26 @@
-.friendList {
-  padding: 0;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.friend {
+  display: grid;
+  justify-content: center;
 }
-.friendList {
-  padding: 0;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+.item {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.avatar {
+  display: block;
+  width: 50px;
+}
+.name {
+  margin-top: 5px;
+  text-align: center;
+  color: slategrey;
+}
+.heads {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  margin-bottom: 10px;
 }

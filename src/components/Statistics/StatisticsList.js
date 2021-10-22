@@ -1,18 +1,17 @@
 import PropTypes from "prop-types";
+import { StatisticsItem } from "./StatisticsItem/StatisticsItem";
 import styles from "./statistics.module.css";
 
-export function Statistics({ title, stats }) {
+export function StatisticsList({ statistics, title }) {
   return (
     <section className={styles.statistics}>
       {title && <h2 className={styles.title}>{title}</h2>}
 
       <ul className={styles.statList}>
-        {stats.map((el) => {
-          const { id, label, percentage } = el;
+        {statistics.map(({ id, label, percentage }) => {
           return (
             <li key={id} className={styles.item}>
-              <span className={styles.label}>{label}</span>
-              <span className={styles.percentage}>{percentage}%</span>
+              <StatisticsItem label={label} percentage={percentage} />
             </li>
           );
         })}
@@ -21,16 +20,14 @@ export function Statistics({ title, stats }) {
   );
 }
 
-Statistics.defaultProps = {
+StatisticsList.defaultProps = {
   title: "Default text",
 };
-Statistics.propType = {
-  children: PropTypes.element,
+
+StatisticsList.propType = {
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
     })
   ),
 };
