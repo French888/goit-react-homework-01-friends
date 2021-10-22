@@ -1,3 +1,4 @@
+import { TransactionItems } from "./TransactionItems";
 import style from "./transactions.module.css";
 import PropTypes from "prop-types";
 
@@ -13,14 +14,17 @@ export function TransactionHistory({ items }) {
       </thead>
 
       <tbody className={style.content}>
-        {items.map((el) => {
-          const { id, type, amount, currency } = el;
+        {items.map((item) => {
+          const { id, type, amount, currency } = item;
           return (
-            <tr key={id}>
-              <td>{type}</td>
-              <td>{amount}</td>
-              <td>{currency}</td>
-            </tr>
+            <>
+              <TransactionItems
+                key={id}
+                type={type}
+                amount={amount}
+                currency={currency}
+              />
+            </>
           );
         })}
       </tbody>
@@ -32,9 +36,6 @@ TransactionHistory.prototypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
     })
   ),
 };
